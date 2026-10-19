@@ -37,10 +37,10 @@ Data frame is an S3 vector built on top of a list, so its storage type is list. 
 A matrix is an atomic vector with a dim attribute, and R fills it by columns, so `matrix(1:6, nrow = 2L)` is stored as 1, 2, 3, 4, 5, 6 with dimensions two rows by three columns. The shorter operand `c(10L, 20L)` is recycled down that stored order as 10, 20, 10, 20, 10, 20, so the top row gets +10 and the bottom row gets +20, and grader notation lists the values in storage order, giving matrix[2x3](11,22,13,24,15,26). Integer plus integer stays integer, the length counts all six cells rather than the two rows, and the result keeps its dim of 2x3.
 
 ## P11
-`NA` means "unknown" and it spreads, so `mean()` of a vector containing `NA` returns `NA` The values `8`, `10`, and `NA_real_` are all doubles, so the vector is double, and `mean()` returns a double, which makes the result a missing double and not a logical `NA`. `mean()` collapses the whole vector into one value, so grader notation writes it as [NA] with no quotes, the length is one, and there are no dimensions.
+`NA` means "unknown" and it spreads, so `mean()` of a vector containing `NA` returns `NA`. The values `8`, `10`, and `NA_real_` are all doubles, so the vector is double, and `mean()` returns a double, which makes the result a missing double and not a logical `NA`. `mean()` collapses the whole vector into one value, so grader notation writes it as [NA] with no quotes, the length is one, and there are no dimensions.
 
 ## P12
-Replace this line with the rule that decides this case.
+The argument `na.rm = TRUE` tells `mean()` to drop the missing value first, so only 8 and 10 remain and the mean is (8 + 10) / 2 = 9 instead of `NA`. The values `8`, `10`, and `NA_real_` are all doubles, so the vector is double, and `mean()` returns a double, which stays double. `mean()` collapses the whole vector into one value, so grader notation writes it as [9], the length is one, and there are no dimensions.
 
 ## P13
 Replace this line with the rule that decides this case.

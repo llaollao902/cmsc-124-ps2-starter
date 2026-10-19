@@ -10,7 +10,7 @@ P08	list{scores=[3,5],label=["A"]}	list	2	none
 P09	data.frame[2x2]{id=[1,2],passed=[TRUE,FALSE]}	list	2	2x2
 P10	matrix[2x3](11,22,13,24,15,26)	integer	6	2x3
 P11	[NA]	double	1	none
-P12	TODO	TODO	TODO	TODO
+P12	[9]	double	1	none
 P13	TODO	TODO	TODO	TODO
 P14	TODO	TODO	TODO	TODO
 P15	TODO	TODO	TODO	TODO
