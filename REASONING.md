@@ -31,7 +31,7 @@ A factor stores integer codes that point at level labels, so the factor has a ty
 A list is its own storage type that keeps unlike elements separate instead of coercing them to one type, so the type is list even though `scores` is integer and `label` is character. Grader notation writes a list as `list{` named components as name=value `}`, with each item in vector notation, so the integers stay unquoted and `"A"` keeps its quotes, giving list{scores=[3,5],label=["A"]}. Moreover, the length counts the components, not the three values inside them, and a plain list has no dimensions, so dimensions are none.
 
 ## P09
-Replace this line with the rule that decides this case.
+Data frame is an S3 vector built on top of a list, so its storage type is list. Columns must have equal length and here, `id = 1:2` (integer) and `passed = c(TRUE, FALSE)` (logical) both have two elements, so there are two rows and two columns, and grader notation writes each column in vector notation inside `data.frame[RxC]{...}`, giving data.frame[2x2]{id=[1,2],passed=[TRUE,FALSE]}. The length counts the two columns, not the two rows, and unlike a plain list a data frame carries dimensions of rows by columns, so dim is 2x2.
 
 ## P10
 Replace this line with the rule that decides this case.
