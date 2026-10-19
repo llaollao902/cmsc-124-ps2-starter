@@ -34,7 +34,7 @@ A list is its own storage type that keeps unlike elements separate instead of co
 Data frame is an S3 vector built on top of a list, so its storage type is list. Columns must have equal length and here, `id = 1:2` (integer) and `passed = c(TRUE, FALSE)` (logical) both have two elements, so there are two rows and two columns, and grader notation writes each column in vector notation inside `data.frame[RxC]{...}`, giving data.frame[2x2]{id=[1,2],passed=[TRUE,FALSE]}. The length counts the two columns, not the two rows, and unlike a plain list a data frame carries dimensions of rows by columns, so dim is 2x2.
 
 ## P10
-Replace this line with the rule that decides this case.
+A matrix is an atomic vector with a dim attribute, and R fills it by columns, so `matrix(1:6, nrow = 2L)` is stored as 1, 2, 3, 4, 5, 6 with dimensions two rows by three columns. The shorter operand `c(10L, 20L)` is recycled down that stored order as 10, 20, 10, 20, 10, 20, so the top row gets +10 and the bottom row gets +20, and grader notation lists the values in storage order, giving matrix[2x3](11,22,13,24,15,26). Integer plus integer stays integer, the length counts all six cells rather than the two rows, and the result keeps its dim of 2x3.
 
 ## P11
 Replace this line with the rule that decides this case.
