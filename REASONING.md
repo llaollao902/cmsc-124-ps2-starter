@@ -43,7 +43,7 @@ Replace this line with the rule that decides this case.
 Replace this line with the rule that decides this case.
 
 ## P13
-Replace this line with the rule that decides this case.
+When a double gets assigned the other items get coerced into the common type which is chosen by the highest in the ladder
 
 ## P14
 Replace this line with the rule that decides this case.
