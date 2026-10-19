@@ -16,7 +16,7 @@ The coercion ladder runs logical, integer, double, character, and the vector tak
 Vector arithmetic works element by element, and the shorter operand `c(1L, 2L)` is recycled from its start (repeated twice) to match the length of longer operand (length four), so the sums are 10+1, 20+2, 30+1, and 40+2. Integer plus integer stays integer, so no coercion up the ladder happens. Therefore in this case, the value is [11,22,31,42] with type integer, length four, and no dimensions.
 
 ## P04
-Replace this line with the rule that decides this case.
+Positive indexing selects by position, so `c(3L, 1L)` picks the third and then the first element, in that order, and each selected value keeps its name (third and first). Selecting integers from an integer vector leaves the type integer. Therefore, in this case, the value is [third=9,first=8], with type integer, with length two, matching the two indices, and no dimensions.
 
 ## P05
 Replace this line with the rule that decides this case.
