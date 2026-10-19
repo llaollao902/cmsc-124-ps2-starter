@@ -67,4 +67,4 @@ Correction: R's `:` operator builds an `integer` sequence. I totally forgot
 Each number will fill the matrices from the left column to the right column going down and filling a column before moving on to the next one. Once one of the matrices is filled up the remaining numbers fill the next matrix
 
 ## P16
-Replace this line with the rule that decides this case.
+`c(4L, 7L, 9L)` creates a vector of integer type and the succeeding `[0L]` selects an index that is outside of the vector's index range so it will output a zero length integer
