@@ -22,7 +22,7 @@ Positive indexing selects by position, so `c(3L, 1L)` picks the third and then t
 A negative index excludes positions, so `-2L` drops the second element `7L` and keeps the first and third. Also, indexing doesn't change the storage, so the integer vector stays integer. Therefore, in this case, the value is [4,9] with type integer, length two and no dimensions.
 
 ## P06
-Replace this line with the rule that decides this case.
+The logical index `is.na(x) | x > 10L` evaluated the vector x per position resulting to  FALSE, TRUE, TRUE, FALSE, because at the missing element `TRUE | NA` is `TRUE` and `12L > 10L` is true. Only the `TRUE` positions are kept, and `NA_integer_` keeps the vector integer. Therefore, in this case, the value is [NA,12] with type integer, length two, since two positions were selected, and no dimensions.
 
 ## P07
 Replace this line with the rule that decides this case.
