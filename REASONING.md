@@ -60,7 +60,9 @@ This leaves us with a final double vector of
 ```
 
 ## P15
-Replace this line with the rule that decides this case.
+This will create a two 2x2 matrices in order to hold a total of with 4 elements in each matrice stored as an array of the dimension of 2x2x2.  
+Although the dimensions used integers, the vector laid into the row contains double since there was no explicit casting as an integer.  
+This is how the layout will look like:  
 
 ## P16
 Replace this line with the rule that decides this case.
