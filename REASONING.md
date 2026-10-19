@@ -28,7 +28,7 @@ The logical index `is.na(x) | x > 10L` evaluated the vector x per position resul
 A factor stores integer codes that point at level labels, so the factor has a type of integer even though the values print as text. The explicit `levels` argument fixes the label order as low, high, so in this case, the codes are 1, 2, 1. Grader notation writes a factor as the element labels in order, then `;levels=` and the levels in order, unquoted and without spaces because a factor isn't a character vector, which gives factor[low,high,low];levels=[low,high]. Moreover, the length of the factor is three (since one per element rather than per level) and there are no dimensions.
 
 ## P08
-Replace this line with the rule that decides this case.
+A list is its own storage type that keeps unlike elements separate instead of coercing them to one type, so the type is list even though `scores` is integer and `label` is character. Grader notation writes a list as `list{` named components as name=value `}`, with each item in vector notation, so the integers stay unquoted and `"A"` keeps its quotes, giving list{scores=[3,5],label=["A"]}. Moreover, the length counts the components, not the three values inside them, and a plain list has no dimensions, so dimensions are none.
 
 ## P09
 Replace this line with the rule that decides this case.
