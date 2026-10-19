@@ -25,7 +25,7 @@ A negative index excludes positions, so `-2L` drops the second element `7L` and 
 The logical index `is.na(x) | x > 10L` evaluated the vector x per position resulting to  FALSE, TRUE, TRUE, FALSE, because at the missing element `TRUE | NA` is `TRUE` and `12L > 10L` is true. Only the `TRUE` positions are kept, and `NA_integer_` keeps the vector integer. Therefore, in this case, the value is [NA,12] with type integer, length two, since two positions were selected, and no dimensions.
 
 ## P07
-Replace this line with the rule that decides this case.
+A factor stores integer codes that point at level labels, so the factor has a type of integer even though the values print as text. The explicit `levels` argument fixes the label order as low, high, so in this case, the codes are 1, 2, 1. Grader notation writes a factor as the element labels in order, then `;levels=` and the levels in order, unquoted and without spaces because a factor isn't a character vector, which gives factor[low,high,low];levels=[low,high]. Moreover, the length of the factor is three (since one per element rather than per level) and there are no dimensions.
 
 ## P08
 Replace this line with the rule that decides this case.
