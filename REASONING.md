@@ -46,7 +46,18 @@ Replace this line with the rule that decides this case.
 When a double gets assigned the other items get coerced into the common type which is chosen by the highest in the ladder
 
 ## P14
-Replace this line with the rule that decides this case.
+```
+adjusted <- ifelse(is.na(scores), 0, scores * 2)
+``` 
+This line checks each item in scores and assigns the value to zero when it finds a missing value else it doubles the existing value, it's then assigned to the adjusted vector.
+```
+adjusted[adjusted > 15] <- 15
+```
+This selects every item that with a value greater than 15 and assigns 15 to the item value.  
+This leaves us with a final double vector of
+```
+[14, 0, 15, 8]
+```
 
 ## P15
 Replace this line with the rule that decides this case.
