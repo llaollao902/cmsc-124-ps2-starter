@@ -19,7 +19,7 @@ Vector arithmetic works element by element, and the shorter operand `c(1L, 2L)` 
 Positive indexing selects by position, so `c(3L, 1L)` picks the third and then the first element, in that order, and each selected value keeps its name (third and first). Selecting integers from an integer vector leaves the type integer. Therefore, in this case, the value is [third=9,first=8], with type integer, with length two, matching the two indices, and no dimensions.
 
 ## P05
-Replace this line with the rule that decides this case.
+A negative index excludes positions, so `-2L` drops the second element `7L` and keeps the first and third. Also, indexing doesn't change the storage, so the integer vector stays integer. Therefore, in this case, the value is [4,9] with type integer, length two and no dimensions.
 
 ## P06
 Replace this line with the rule that decides this case.
