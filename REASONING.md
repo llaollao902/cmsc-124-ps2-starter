@@ -10,7 +10,7 @@ later commit.
 The coercion ladder runs logical, integer, double, character, and the vector takes the highest type present. The third value `3.5` is a double which is the highest type in this vector, so `TRUE` will become `1` and `2L` will become `2`. Therefore, in this case, the value is [1,2,3.5] with type double, length three, and no dimension.
 
 ## P02
-Replace this line with the rule that decides this case.
+The coercion ladder runs logical, integer, double, character, and the vector takes the highest type present. The second value `"2"` is character which is the highest type, so `1L` becomes `"1"` and  `TRUE` becomes `"TRUE"`. Therefore, in this case, the value is ["1","2","TRUE"] with type character, length three, and no dimensions.
 
 ## P03
 Replace this line with the rule that decides this case.
