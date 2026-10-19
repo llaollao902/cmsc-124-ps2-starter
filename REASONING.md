@@ -7,7 +7,7 @@ After you run and find a miss, add a short correction entry under that case in a
 later commit.
 
 ## P01
-Replace this line with the rule that decides this case.
+The coercion ladder runs logical, integer, double, character, and the vector takes the highest type present. The third value `3.5` is a double which is the highest type in this vector, so `TRUE` will become `1` and `2L` will become `2`. Therefore, in this case, the value is [1,2,3.5] with type double, length three, and no dimension.
 
 ## P02
 Replace this line with the rule that decides this case.
