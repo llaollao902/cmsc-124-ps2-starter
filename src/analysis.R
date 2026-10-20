@@ -154,11 +154,11 @@ summarize_roster <- function(roster) {
     score_by_group <- split(roster$adjusted_score, roster$group)
 
     summary_list <- list(
-        rows          = nrow(roster),                      # integer
-        missing_raw   = sum(is.na(roster$raw_score)),          # integer
-        mean_adjusted = mean(roster$adjusted_score),                 # double
-        passed        = roster$name[roster$passed],        # character vector
-        mean_by_group = vapply(score_by_group, mean, double(1))      # named double, no dim
+        rows          = nrow(roster),                            # integer
+        missing_raw   = sum(is.na(roster$raw_score)),            # integer
+        mean_adjusted = mean(roster$adjusted_score),             # double
+        passed        = roster$name[roster$passed],              # character vector
+        mean_by_group = vapply(score_by_group, mean, double(1))  # named double, no dim
     )
 
     return(summary_list)
