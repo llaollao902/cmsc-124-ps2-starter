@@ -43,13 +43,28 @@ A matrix is an atomic vector with a dim attribute, and R fills it by columns, so
 The argument `na.rm = TRUE` tells `mean()` to drop the missing value first, so only 8 and 10 remain and the mean is (8 + 10) / 2 = 9 instead of `NA`. The values `8`, `10`, and `NA_real_` are all doubles, so the vector is double, and `mean()` returns a double, which stays double. `mean()` collapses the whole vector into one value, so grader notation writes it as [9], the length is one, and there are no dimensions.
 
 ## P13
-Replace this line with the rule that decides this case.
+When a double gets assigned the other items get coerced into the common type which is chosen by the highest in the ladder
 
 ## P14
-Replace this line with the rule that decides this case.
+```
+adjusted <- ifelse(is.na(scores), 0, scores * 2)
+``` 
+This line checks each item in scores and assigns the value to zero when it finds a missing value else it doubles the existing value, it's then assigned to the adjusted vector.
+```
+adjusted[adjusted > 15] <- 15
+```
+This selects every item that with a value greater than 15 and assigns 15 to the item value.  
+This leaves us with a final double vector of
+```
+[14, 0, 15, 8]
+```
 
 ## P15
-Replace this line with the rule that decides this case.
+This will create a two 2x2 matrices in order to hold a total of with 4 elements in each matrice stored as an array of the dimension of 2x2x2.  
+Although the dimensions used integers, the vector laid into the row contains double since there was no explicit casting as an integer.  
+Correction: R's `:` operator builds an `integer` sequence. I totally forgot
+
+Each number will fill the matrices from the left column to the right column going down and filling a column before moving on to the next one. Once one of the matrices is filled up the remaining numbers fill the next matrix
 
 ## P16
-Replace this line with the rule that decides this case.
+`c(4L, 7L, 9L)` creates a vector of integer type and the succeeding `[0L]` selects an index that is outside of the vector's index range so it will output a zero length integer
