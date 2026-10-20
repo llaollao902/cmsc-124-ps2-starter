@@ -56,7 +56,29 @@ clean_scores_vector <- function(scores) {
 # names attached. Accumulating into a fresh vector with out <- c(out, value)
 # drops them, and the check compares with identical(), which notices.
 clean_scores_scalar <- function(scores) {
-    stop("TODO: implement clean_scores_scalar()")
+    # copy scores into a local double vector that keeps the names:
+    # setNames puts the names that were dropped
+    out <- setNames(as.double(scores), names(scores))
+
+    for (i in seq_along(out)) {
+        value <- out[[i]]
+
+        # cleaning logic
+        if (is.na(value)) {
+            new_value <- 0
+        } else {
+            new_value <- value * 2
+
+            if (new_value > 20) {
+                # cap the value to 20
+                new_value <- 20
+            }
+        }
+        out[[i]] <- new_value
+    }
+
+    return(out)
+
 }
 
 # build_roster(student_names, groups, scores)
@@ -94,7 +116,7 @@ build_roster <- function(student_names, groups, scores) {
         group = factor(groups, levels = unique(groups)),
         raw_score = unname(scores),
         adjusted_score = clean_scores,
-        passed = ifelse(clean_scores > 12, TRUE, FALSE),
+        passed = ifelse(clean_scores >= 12, TRUE, FALSE),
         stringsAsFactors = FALSE)
     return (roster)
 }
@@ -129,5 +151,15 @@ build_roster <- function(student_names, groups, scores) {
 # split() can divide adjusted_score by every factor level. vapply() can then
 # compute one mean for each part and return a named vector with no dimensions.
 summarize_roster <- function(roster) {
-    stop("TODO: implement summarize_roster()")
+    score_by_group <- split(roster$adjusted_score, roster$group)
+
+    summary_list <- list(
+        rows          = nrow(roster),                            # integer
+        missing_raw   = sum(is.na(roster$raw_score)),            # integer
+        mean_adjusted = mean(roster$adjusted_score),             # double
+        passed        = roster$name[roster$passed],              # character vector
+        mean_by_group = vapply(score_by_group, mean, double(1))  # named double, no dim
+    )
+
+    return(summary_list)
 }
