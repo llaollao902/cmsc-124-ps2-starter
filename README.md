@@ -1,4 +1,8 @@
 <!--no-pdf-->
+# Analysis and Prediction Authors
+- Yuan Miguel C. Birondo (YuMBir)
+- Justin B. Lauricio (llaollao902)
+
 # CMSC 124 Problem Set 2 Starter
 
 This repository contains the R prediction corpus and the four functions for
